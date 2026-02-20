@@ -1,12 +1,16 @@
+// Get the dropdown
 const select = document.getElementById("colorSelect");
-const button = document.queryselector('input[type="button"]');
 
+// Get the button (IMPORTANT: correct capitalization)
+const button = document.querySelector('input[type="button"][value="Select and Remove"]');
+
+// Attach click handler
 button.addEventListener("click", function () {
-    // Get selected index
-    const selectedIndex = select.selectedIndex;
+    // selectedIndex gives index of chosen option
+    const index = select.selectedIndex;
 
-    // Remove only if an option is selected
-    if (selectedIndex !== -1) {
-        select.remove(selectedIndex);
+    // Safety check (not strictly required, but good practice)
+    if (index !== -1) {
+        select.remove(index);
     }
 });
